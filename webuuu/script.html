@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Js/script.js"></script>
+</head>
+<body>
+    <!-- Agregamos la lista y el botón al HTML -->
+    <ul id="mi-lista"></ul>
+    <button id="mi-boton">Agregar</button>
+
+    <script>
+        // Obtenemos las referencias a los elementos
+        const lista = document.getElementById("mi-lista");
+        const button = document.getElementById("mi-boton");
+        
+        // Agregamos el evento click al botón
+        button.addEventListener('click', function() {
+            let item = document.createElement("li");
+            item.innerHTML = "profe";
+            lista.appendChild(item);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F4F7FE;
+}
+
+.contenedor {
+    display: flex;
+    height: 160vh;
+}
+
+.barra-lateral {
+    width: 250px;
+    background-color: #ff0505;
+    color: white;
+    padding: 20px;
+}
+
+.barra-lateral .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* Menú lateral */
+.menu ul li {
+    position: relative;
+    margin: 20px 0;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 15px 0 0 15px;
+}
+
+.menu ul li:hover {
+    background-color: #F4F7FE;
+    color: #000000;
+    width: 230px;
+    height: 40px;
+}
+
+.menu ul li::before,
+.menu ul li::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+}
+
+.menu ul li::before {
+    top: -20px;
+    border-bottom-right-radius: 20px;
+}
+
+.menu ul li::after {
+    bottom: -20px;
+    border-top-right-radius: 20px;
+}
+
+.menu ul li:hover::before {
+    top: -20px;
+    background-color: #ff0505;
+    box-shadow: 5px 5px 0 5px #F4F7FE;
+}
+
+.menu ul li:hover::after {
+    bottom: -20px;
+    background-color: #ff0505;
+    box-shadow: 5px -5px 0 5px #F4F7FE;
+}
+
+.menu ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Ocultar los spans originales ya que no los necesitamos */
+.menu ul li span.curve-top,
+.menu ul li span.curve-bottom {
+    display: none;
+}
+
+.contenido-principal {
+    flex: 1;
+    padding: 20px;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.encabezado h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.barra-busqueda {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.barra-busqueda input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    width: 200px;
+}
+
+.barra-busqueda button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff0505;
+}
+
+.cabecera-perfil {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 30px auto;
+    padding: 5px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 100%;
+}
+
+.info-perfil,
+.info-pago {
+    display: flex;
+    text-align: end;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.info-perfil {
+    width: 65%;
+}
+
+.info-pago {
+    width: 30%;
+}
+
+.perfil-superior {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.perfil-superior img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-detalles h2 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    color: #333;
+}
+
+.info-detalles p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.iconos-sociales {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.iconos-sociales a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+.iconos-sociales a:hover {
+    background-color: #e0e0e0;
+}
+
+.iconos-sociales img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    align-items: center;
+}
+
+.info-pago h3 {
+    margin-top: 20;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.metodos-pago {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.metodos-pago a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.metodos-pago a:hover {
+    background-color: #e0e0e0;
+    justify-content: end;
+}
+
+.metodos-pago img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    justify-items: end;
+}
+
+@media (max-width: 768px) {
+    .cabecera-perfil {
+        flex-direction: column;
+    }
+
+    .info-perfil,
+    .info-pago {
+        width: 100%;
+        justify-items: center;
+    }
+
+    .info-pago {
+        margin-top: 20px;
+        justify-items: center;
+    }
+}
+
+/* Contenedor principal que agrupa los cursos y la sección premium */
+.cabecera-cursos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 30px auto;
+    padding: 5px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 100%;
+    gap: 20px;
+    /* Agregar espacio entre los elementos */
+}
+
+/* Estilos para la sección de cursos */
+.contenedor-cursos {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 70%;
+    /* Reducir el ancho al 70% */
+}
+
+/* Estilos para la sección premium */
+.seccion-premium {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 25%;
+    /* Ajustar el ancho al 25% */
+}
+
+/* Se asegura que en pantallas pequeñas se alineen verticalmente */
+@media (max-width: 768px) {
+    .cabecera-cursos {
+        flex-direction: column;
+    }
+
+    .contenedor-cursos,
+    .seccion-premium {
+        width: 100%;
+        /* Ocupa el 100% en pantallas pequeñas */
+    }
+
+    .seccion-premium {
+        margin-top: 20px;
+        /* Margen superior cuando está en columnas */
+    }
+}
+
+/* Contenedor que incluye los cursos y la sección premium */
+.contenedor-cursos-premium {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Alinea los elementos al inicio */
+    margin: 40px auto;
+    width: 500%;
+    max-width: 1100px;
+    /* Ancho máximo */
+    gap: 75px;
+    /* Añadir espacio entre las dos secciones */
+}
+
+/* Contenedor de los cursos */
+.contenedor-cursos {
+    flex: 2;
+    /* Ocupa más espacio que la sección premium */
+    background-color: #F0F4FF;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección Premium */
+.seccion-premium {
+    flex: 1;
+    /* Ocupa menos espacio */
+    background-color: #fed0d0;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+    /* Ancho mínimo */
+}
+
+/* Estilos generales de los cursos */
+.seccion-cursos h3 {
+    font-size: 1.7em;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.lista-cursos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.curso {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.curso .indicador {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ff0505;
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.curso.finalizado .indicador {
+    background-color: #0289f8;
+}
+
+.curso.en-progreso .indicador {
+    background-color: #1ef701;
+}
+
+.info-curso {
+    margin-left: 20px;
+}
+
+.info-curso .titulo {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+/* Botón de la sección premium */
+.seccion-premium h3 {
+    margin-bottom: 15px;
+    font-size: 1.7em;
+    color: #333;
+}
+
+.seccion-premium p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #666;
+}
+
+.seccion-premium button {
+    background-color: #ff0505;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.seccion-premium button:hover {
+    background-color: #ff0505;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor-cursos-premium {
+        flex-direction: column;
+    }
+
+    .contenedor-cursos,
+    .seccion-premium {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

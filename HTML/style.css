@@ -1,0 +1,41 @@
+#contenedor{
+    width: 100%; /* 30% de la pantalla */
+    height: 100px; /* Altura del contenedor */
+    display: inline-block;
+    text-align: center;
+    line-height: 100px; /* Centra el texto verticalmente */
+    background: rgb(94, 255, 215);
+    display: inline-block; 
+    
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    min-height: 70px;
+    background: coral;
+    align-items: center;
+    padding: 10px;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0%;
+}
+a{
+    text-decoration: none;
+    color: black; 
+}
+nav a{
+    font-weight: 600;
+    padding-right: 10px;
+}
+nav a:hover{
+    color: white;
+}
+@media (max-width:700px) {
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+}
